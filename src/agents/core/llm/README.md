@@ -1,0 +1,1 @@
+# model-agnostic gateway (API now, local fallback later)

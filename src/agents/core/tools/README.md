@@ -1,0 +1,1 @@
+# typed tool base class: read vs write, idempotency, provenance

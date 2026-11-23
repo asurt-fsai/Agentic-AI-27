@@ -1,0 +1,1 @@
+# short notes: why LangGraph, why Qdrant, etc.

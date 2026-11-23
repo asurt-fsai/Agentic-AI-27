@@ -1,0 +1,1 @@
+# thin adapters: github, notion, rosbag2, docker sandbox
