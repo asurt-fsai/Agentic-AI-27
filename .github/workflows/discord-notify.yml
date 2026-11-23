@@ -1,0 +1,23 @@
+name: Agentic AI - Discord Commit Alert
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  discord_notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Send Commit Alert to Discord
+        uses: tristanbudd/discord-commit-github-action@master
+        with:
+          webhook-url: ${{ secrets.WEBHOOK_AGENTIC_AI }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          show-commit-message: true
+          show-changed-files: true
+          show-commit-branch: true
+          show-commit-author: true
+          show-commit-link: true
