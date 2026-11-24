@@ -1,0 +1,2 @@
+{"id": "D1", "group": "rulebook", "question": "Can teams modify the shared car?", "expected": ["mounting"], "source_id": "T1.1.2", "trap": false}
+{"id": "D2", "group": "rulebook", "question": "Is a lens hood allowed?", "expected": [], "trap": true}
