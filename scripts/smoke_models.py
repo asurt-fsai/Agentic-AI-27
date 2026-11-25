@@ -1,4 +1,5 @@
 """T15 check: one call on each route, and the time each took."""
+
 import sys
 import time
 from pathlib import Path

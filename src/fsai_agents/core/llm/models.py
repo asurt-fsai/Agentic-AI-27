@@ -10,13 +10,15 @@ from pydantic import SecretStr
 load_dotenv()
 
 API_TIMEOUT = float(os.getenv("MODEL_API_TIMEOUT", "60"))
-LOCAL_TIMEOUT = float(os.getenv("MODEL_LOCAL_TIMEOUT", "120"))  
+LOCAL_TIMEOUT = float(os.getenv("MODEL_LOCAL_TIMEOUT", "120"))
 
 API_MODEL = os.getenv("MODEL_OPENROUTER_NAME", "nvidia/nemotron-3.5-lightning:free")
 LOCAL_MODEL = os.getenv("MODEL_LOCAL_NAME", "qwen3.5:0.8b")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 
 ROUTES = ("api", "local", "openrouter")
+
+
 class ChatOpenRouterNoRetry(ChatOpenRouter):
     """ChatOpenRouter where max_retries=0 really means no SDK retries."""
 
@@ -35,14 +37,15 @@ class ChatOpenRouterNoRetry(ChatOpenRouter):
             )
         return client
 
+
 def get_model(route: str = "api"):
     """Return a chat model for the given route: 'api' (main) or 'local' (backup)."""
     if route == "api":
         return ChatOpenRouter(
             model=API_MODEL,
             api_key=SecretStr(os.environ["OPENROUTER_API_KEY"]),
-            timeout= max(1, int(API_TIMEOUT * 1000)),
-            max_retries=0,  
+            timeout=max(1, int(API_TIMEOUT * 1000)),
+            max_retries=0,
         )
     if route == "local":
         return ChatOllama(
@@ -54,8 +57,8 @@ def get_model(route: str = "api"):
         return ChatOpenRouterNoRetry(
             model=API_MODEL,
             api_key=SecretStr(os.environ["OPENROUTER_API_KEY"]),
-            timeout= max(1, int(API_TIMEOUT * 1000)),
-            max_retries=0,  
+            timeout=max(1, int(API_TIMEOUT * 1000)),
+            max_retries=0,
         )
-    
+
     raise ValueError(f"unknown route: {route!r}, expected one of {ROUTES}")
