@@ -9,7 +9,6 @@ dependencies = [
     "langchain-ollama",
     "langchain-anthropic",
     "langchain-openrouter",
-    "openrouter.utils",
     "pydantic",
 ]
 
