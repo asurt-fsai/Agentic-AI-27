@@ -6,6 +6,11 @@ dependencies = [
     "langgraph",
     "pydantic",
     "python-dotenv",
+    "langchain-ollama",
+    "langchain-anthropic",
+    "langchain-openrouter",
+    "openrouter.utils",
+    "pydantic",
 ]
 
 [project.optional-dependencies]
