@@ -14,7 +14,7 @@ def test_unknown_route_is_rejected():
 
 
 def test_both_routes_exist():
-    assert models.ROUTES == ("api", "local")
+    assert models.ROUTES == ("api", "local", "openrouter")
 
 
 def test_timeouts_are_positive():
@@ -23,6 +23,7 @@ def test_timeouts_are_positive():
 
 
 def test_models_build_without_network(monkeypatch):
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-key")
     assert models.get_model("api") is not None
     assert models.get_model("local") is not None
+    assert models.get_model("openrouter") is not None
