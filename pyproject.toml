@@ -10,6 +10,7 @@ dependencies = [
     "langchain-anthropic",
     "langchain-openrouter",
     "pydantic",
+    "langfuse",
 ]
 
 [project.optional-dependencies]
