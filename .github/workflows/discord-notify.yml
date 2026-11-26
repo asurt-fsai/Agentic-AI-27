@@ -1,11 +1,21 @@
-name: Agentic AI - Discord Commit Alert
-on: [push]
+name: Agentic AI - Discord Notifications (Commits & PRs)
+
+on:
+  push:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+    branches:
+      - main
+      - staging
 
 permissions:
   contents: read
+  pull-requests: read
 
 jobs:
-  discord_notify:
+  commit_notify:
+    name: Send Commit Alert to Discord
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -21,3 +31,40 @@ jobs:
           show-commit-branch: true
           show-commit-author: true
           show-commit-link: true
+
+  pr_notify:
+    name: Send PR Alert to Discord
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send PR Alert to Discord
+        if: env.PR_WEBHOOK != ''
+        env:
+          PR_WEBHOOK: ${{ secrets.WEBHOOK_AGENTIC_AI_REQUEST }}
+          PR_ACTION: ${{ github.event.action }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.actor }}
+          HEAD_BRANCH: ${{ github.head_ref }}
+          BASE_BRANCH: ${{ github.base_ref }}
+          REPO_NAME: ${{ github.repository }}
+        run: |
+          PAYLOAD=$(jq -n \
+            --arg title "PR #${PR_NUMBER}: ${PR_TITLE}" \
+            --arg url "$PR_URL" \
+            --arg desc "**Action:** ${PR_ACTION}
+          **Author:** @${PR_AUTHOR}
+          **Merge:** \`${HEAD_BRANCH}\` → \`${BASE_BRANCH}\`" \
+            --arg footer "$REPO_NAME" \
+            '{
+              embeds: [{
+                title: $title,
+                url: $url,
+                description: $desc,
+                color: 41371,
+                footer: { text: $footer }
+              }]
+            }')
+
+          curl -f -s -S -H "Content-Type: application/json" -d "$PAYLOAD" "$PR_WEBHOOK"
