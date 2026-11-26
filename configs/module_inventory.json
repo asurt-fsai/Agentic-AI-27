@@ -1,0 +1,206 @@
+{
+  "version": "1.0",
+  "description": "T23 inventory of ASU FS-AI subteam modules and Agentic-AI-27 internal packages.",
+  "modules": [
+    {
+      "module_id": "perception_camera",
+      "name": "Perception Camera",
+      "category": "subteam",
+      "lead_or_owner": "Perception Camera Subteam (2 members)",
+      "priority_phase": "P2",
+      "expected_docs": ["docs/subteams/perception_camera.md"]
+    },
+    {
+      "module_id": "perception_lidar",
+      "name": "Perception LiDAR",
+      "category": "subteam",
+      "lead_or_owner": "Perception LiDAR Subteam (3 members)",
+      "priority_phase": "P2",
+      "expected_docs": ["docs/subteams/perception_lidar.md"]
+    },
+    {
+      "module_id": "slam",
+      "name": "SLAM & Localization",
+      "category": "subteam",
+      "lead_or_owner": "SLAM Subteam (3 members)",
+      "priority_phase": "P2",
+      "expected_docs": ["docs/subteams/slam.md"]
+    },
+    {
+      "module_id": "planning_dl",
+      "name": "Planning Deep Learning",
+      "category": "subteam",
+      "lead_or_owner": "Planning DL Subteam (2 members)",
+      "priority_phase": "P3",
+      "expected_docs": ["docs/subteams/planning_dl.md"]
+    },
+    {
+      "module_id": "planning_classical",
+      "name": "Planning Classical",
+      "category": "subteam",
+      "lead_or_owner": "Planning Classical Subteam (2 members)",
+      "priority_phase": "P3",
+      "expected_docs": ["docs/subteams/planning_classical.md"]
+    },
+    {
+      "module_id": "planning_skidpad",
+      "name": "Planning Skidpad",
+      "category": "subteam",
+      "lead_or_owner": "Planning Skidpad Subteam (2 members)",
+      "priority_phase": "P3",
+      "expected_docs": ["docs/subteams/planning_skidpad.md"]
+    },
+    {
+      "module_id": "control_mpc",
+      "name": "Control MPC",
+      "category": "subteam",
+      "lead_or_owner": "Control MPC Subteam (3 members)",
+      "priority_phase": "P3",
+      "expected_docs": ["docs/subteams/control_mpc.md"]
+    },
+    {
+      "module_id": "psi",
+      "name": "Platform & Supervision Integration (PSI)",
+      "category": "subteam",
+      "lead_or_owner": "PSI Subteam (3 members)",
+      "priority_phase": "P2",
+      "expected_docs": ["docs/subteams/psi.md"]
+    },
+    {
+      "module_id": "ci_team",
+      "name": "Continuous Integration (CI Team)",
+      "category": "subteam",
+      "lead_or_owner": "CI Team (2 members)",
+      "priority_phase": "P1",
+      "expected_docs": ["docs/subteams/ci_team.md"]
+    },
+    {
+      "module_id": "simulation",
+      "name": "Simulation (CARLA & Gazebo)",
+      "category": "subteam",
+      "lead_or_owner": "Simulation Subteam (4 members)",
+      "priority_phase": "P3",
+      "expected_docs": ["docs/subteams/simulation.md"]
+    },
+    {
+      "module_id": "agentic_ai",
+      "name": "Agentic AI",
+      "category": "subteam",
+      "lead_or_owner": "Agentic AI Subteam (3 members)",
+      "priority_phase": "P1",
+      "expected_docs": ["README.md", "docs/hardware.md"]
+    },
+    {
+      "module_id": "docs_architecture",
+      "name": "System Architecture Doc",
+      "category": "agentic_package",
+      "lead_or_owner": "Agentic AI Core",
+      "priority_phase": "P1",
+      "expected_docs": ["docs/architecture.md"]
+    },
+    {
+      "module_id": "core_llm",
+      "name": "core/llm",
+      "category": "agentic_package",
+      "lead_or_owner": "Mohamed Samy",
+      "priority_phase": "P1",
+      "expected_docs": ["src/fsai_agents/core/llm/README.md"]
+    },
+    {
+      "module_id": "core_memory",
+      "name": "core/memory",
+      "category": "agentic_package",
+      "lead_or_owner": "Amir",
+      "priority_phase": "P1",
+      "expected_docs": ["src/fsai_agents/core/memory/README.md"]
+    },
+    {
+      "module_id": "core_observability",
+      "name": "core/observability",
+      "category": "agentic_package",
+      "lead_or_owner": "Mohamed Samy",
+      "priority_phase": "P1",
+      "expected_docs": ["src/fsai_agents/core/observability/README.md"]
+    },
+    {
+      "module_id": "core_orchestrator",
+      "name": "core/orchestrator",
+      "category": "agentic_package",
+      "lead_or_owner": "Agentic AI Core",
+      "priority_phase": "P2",
+      "expected_docs": ["src/fsai_agents/core/orchestrator/README.md"]
+    },
+    {
+      "module_id": "core_policy",
+      "name": "core/policy",
+      "category": "agentic_package",
+      "lead_or_owner": "Amir",
+      "priority_phase": "P1",
+      "expected_docs": ["src/fsai_agents/core/policy/README.md"]
+    },
+    {
+      "module_id": "core_tools",
+      "name": "core/tools",
+      "category": "agentic_package",
+      "lead_or_owner": "Mohamed Samy",
+      "priority_phase": "P2",
+      "expected_docs": ["src/fsai_agents/core/tools/README.md"]
+    },
+    {
+      "module_id": "integrations",
+      "name": "integrations",
+      "category": "agentic_package",
+      "lead_or_owner": "Agentic AI Core",
+      "priority_phase": "P2",
+      "expected_docs": ["src/fsai_agents/integrations/README.md"]
+    },
+    {
+      "module_id": "github_automation",
+      "name": "modules/github_automation",
+      "category": "agentic_package",
+      "lead_or_owner": "Mohamed Samy",
+      "priority_phase": "P4",
+      "expected_docs": ["src/fsai_agents/modules/github_automation/README.md"]
+    },
+    {
+      "module_id": "ros2_ci",
+      "name": "modules/ros2_ci",
+      "category": "agentic_package",
+      "lead_or_owner": "Mohamed Samy",
+      "priority_phase": "P3",
+      "expected_docs": ["src/fsai_agents/modules/ros2_ci/README.md"]
+    },
+    {
+      "module_id": "simulation_testing",
+      "name": "modules/simulation_testing",
+      "category": "agentic_package",
+      "lead_or_owner": "Mohamed Samy",
+      "priority_phase": "P3",
+      "expected_docs": ["src/fsai_agents/modules/simulation_testing/README.md"]
+    },
+    {
+      "module_id": "log_monitoring",
+      "name": "modules/log_monitoring",
+      "category": "agentic_package",
+      "lead_or_owner": "Mohamed Samy",
+      "priority_phase": "P3",
+      "expected_docs": ["src/fsai_agents/modules/log_monitoring/README.md"]
+    },
+    {
+      "module_id": "notion_automation",
+      "name": "modules/notion_automation",
+      "category": "agentic_package",
+      "lead_or_owner": "Amir",
+      "priority_phase": "P4",
+      "expected_docs": ["src/fsai_agents/modules/notion_automation/README.md"]
+    },
+    {
+      "module_id": "rag_chatbot",
+      "name": "modules/rag_chatbot",
+      "category": "agentic_package",
+      "lead_or_owner": "Amir / Omar",
+      "priority_phase": "P2",
+      "expected_docs": ["src/fsai_agents/modules/rag_chatbot/README.md"]
+    }
+  ]
+}
