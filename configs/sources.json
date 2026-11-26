@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "description": "T19 source sensitivity & ACL manifest for FS-AI Agentic AI ingestion.",
+  "sources": [
+    {
+      "source_id": "fs-ai-2026-rules-v1",
+      "title": "FS-AI 2026 Competition Rules v1",
+      "source_type": "rulebook",
+      "path": "data/fs-ai-2026-rules-v1.md",
+      "sensitivity": "api-ok",
+      "acl": "public",
+      "namespace": "ns_rules_ops",
+      "edition": "FS2026-v1",
+      "parser": "local"
+    },
+    {
+      "source_id": "agentic-ai-27-repo",
+      "title": "Agentic-AI-27 Repository",
+      "source_type": "repo",
+      "path": ".",
+      "sensitivity": "api-ok",
+      "acl": "team-internal",
+      "namespace": "ns_agentic_ai",
+      "edition": "main",
+      "parser": "local",
+      "include_globs": ["README.md", "docs/**/*.md", "src/**/*.py"]
+    },
+    {
+      "source_id": "fsai-ros2-stack-repo",
+      "title": "FS-AI ROS 2 Autonomous Stack Repository",
+      "source_type": "repo",
+      "path": "data/repos/fsai_ros2_stack",
+      "sensitivity": "local-only",
+      "acl": "team-internal",
+      "namespace": "ns_ros2_stack",
+      "edition": "HEAD",
+      "parser": "local",
+      "include_globs": ["README.md", "**/*.md", "**/*.py"]
+    },
+    {
+      "source_id": "notion-read-only-export",
+      "title": "Notion Engineering Workspace Export",
+      "source_type": "notion",
+      "path": "data/notion_export",
+      "sensitivity": "local-only",
+      "acl": "team-internal",
+      "namespace": "ns_rules_ops",
+      "edition": "2026-11",
+      "parser": "local",
+      "include_globs": ["**/*.md"]
+    },
+    {
+      "source_id": "subteam-survey-responses",
+      "title": "Raw Subteam Maintenance Survey Sheet",
+      "source_type": "notion",
+      "path": "data/survey_responses.csv",
+      "sensitivity": "excluded",
+      "acl": "maintainer-only",
+      "namespace": "ns_agentic_ai",
+      "edition": "2026-11",
+      "parser": "local"
+    },
+    {
+      "source_id": "alumni-contact-sheet-slide-51",
+      "title": "Kickoff Slide 51 Alumni Phone Numbers",
+      "source_type": "notion",
+      "path": "data/alumni_contacts_slide_51.md",
+      "sensitivity": "excluded",
+      "acl": "maintainer-only",
+      "namespace": "ns_agentic_ai",
+      "edition": "2026-11",
+      "parser": "local"
+    }
+  ]
+}

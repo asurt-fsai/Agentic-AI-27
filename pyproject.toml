@@ -9,12 +9,12 @@ dependencies = [
     "langchain-ollama",
     "langchain-anthropic",
     "langchain-openrouter",
-    "pydantic",
     "langfuse",
 ]
 
 [project.optional-dependencies]
 dev = ["ruff", "pytest"]
+ingestion = ["docling", "llama-parse", "psycopg[binary]", "pgvector"]
 
 [tool.ruff]
 line-length = 100
