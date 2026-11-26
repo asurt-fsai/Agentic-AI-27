@@ -29,7 +29,7 @@ class DoclingParser:
         except ImportError as exc:
             raise RuntimeError(
                 "Docling is not installed. Install optional dependencies with "
-                "`pip install -e \".[ingestion]\"`."
+                '`pip install -e ".[ingestion]"`.'
             ) from exc
 
         converter = DocumentConverter()
@@ -47,7 +47,7 @@ class LlamaParseAdapter:
         except ImportError as exc:
             raise RuntimeError(
                 "llama-parse is not installed. Install optional dependencies with "
-                "`pip install -e \".[ingestion]\"`."
+                '`pip install -e ".[ingestion]"`.'
             ) from exc
 
         parser = LlamaParse(result_type="markdown")
